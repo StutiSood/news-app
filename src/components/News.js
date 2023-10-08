@@ -35,7 +35,7 @@ const News = (props) =>  {
     useEffect(() => {
       updateNews();
       //eslint-disable-next-line 
-      document.title = `${capitalizeFirstLetter(props.category)} - NewsMonkey`
+      document.title = `${capitalizeFirstLetter(props.category)} - NewsApp`
     }, [])
 
     const fetchMoreData = async() => {
@@ -62,7 +62,7 @@ const News = (props) =>  {
 
         <div className="container">
         <div className='row'>
-            {/*!this.state.loading &&*/ articles.map((element) => {
+            {articles.map((element) => {
                 return <div className='col-md-4' key = {element.url}>
                     <NewsItem title = {element.title ? element.title : ""} description = {element.description ? element.description : ""} imageUrl = {element.urlToImage} newsUrl = {element.url} author = {element.author} date = {element.publishedAt} source = {element.source.name}/>
                     </div>
